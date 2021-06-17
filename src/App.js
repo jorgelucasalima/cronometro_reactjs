@@ -37,7 +37,15 @@ class App extends Component {
 
 //limpa o timer para zerar
     limpar(){
+        if (this.timer !== null) {
+            clearInterval(this.timer)
+            this.timer = null
+        } 
 
+        let state = this.state
+        state.numero = 0
+        state.botao = 'Go'
+        this.setState(this.state)
     }
 
 
